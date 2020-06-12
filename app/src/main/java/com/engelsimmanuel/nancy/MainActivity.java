@@ -29,16 +29,21 @@ public class MainActivity extends AppCompatActivity {
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (errorText.getText().toString() != "") {
-                    errorText.setText("");
-                }
                 // whatever event you want to happen
                 // whenever a user clicks this button
                 // add 1 to score then display the result in the score text in our XML Code
-                score = score + 1; // what this means is literally new score = 0+1 = 1
-                // new score will now be 1 here
-                scoreText.setText(String.valueOf(score)); //score
+                // score cannot be more than 100
+                // lets add this logic to our code too
+                if (score == 100) {
+                    errorText.setText("Score cannot be more than 100");
+                } else {
+                    score = score + 1; // what this means is literally new score = 0+1 = 1
+                    // new score will now be 1 here
+                    scoreText.setText(String.valueOf(score)); //score
+                    if (errorText.getText().toString() != "") {
+                        errorText.setText("");
+                    }
+                }
             }
         });
 
@@ -54,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     //statements(s);
                     score = score - 1;
                     scoreText.setText(String.valueOf(score));
+                    if (errorText.getText().toString() != "") {
+                        errorText.setText("");
+                    }
                 }
             }
         });

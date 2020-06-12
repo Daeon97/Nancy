@@ -5,13 +5,16 @@
     android:layout_height="match_parent"
     android:background="@android:color/black"
     android:padding="8dp"
+    android:scrollbarSize="3dp"
+    android:scrollbarStyle="insideInset"
+    android:scrollbarThumbVertical="@android:color/white"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
